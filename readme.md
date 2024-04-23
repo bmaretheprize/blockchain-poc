@@ -1,66 +1,55 @@
 # Cryptocurrency
 
-### Cryptocurrency vs Cryptocurrency Token
+## Cryptocurrency vs Cryptocurrency Token
+Cryptocurrencies are native to their own blockchain and have their own independent value (e.g., Bitcoin on the Bitcoin blockchain, Ether on Ethereum). Cryptocurrency tokens are built on top of another blockchain using its technology, like ERC-20 tokens on Ethereum, and often serve specific functions within that ecosystem.
 
-### Proof of Work
-A decentralized consensus mechanism that requires members to expend effort solving an encrypted hexadecimal number. Sometimes also called "mining" in reference to receiving a reward for work being done. Proof of work allows for peer-topeer transaction processing w/o needing a trusted third party.
-- A bitcoin is technically a token
-- Blockchains are just distributed ledgers that record all bitcoin transactions. Each block holds n number of transactions. Some of the information stored in a block are...
-    - transaction amounts, wallet addresses, timestamps etc.
-- All of this block data is encrypted into a "block header" which is just a hexidecimal number created via blockchain's hashing function
-- The hash from each block is used by the next block to ensure the ledger cannot be altered
-- #### Hashes....
-    - When a block is closed, the hash must be verified before a new block can be opened.
-    - This is where proof of work comes in.
-- #### Nonces
-    - A hash including a series of numbers is called the nonce "number used once". When a miner begins mining, it generates a hash from publicly available informationm using a nonce equal to zero.
-- #### Solving the hash...
-    - If the hash is lower than the current network target, the miner successfully solved the hash.
-    - The network target is a mathemathical result of a formula converted to a hexidecimal number that dictates the mining difficulty
-    - If the hash is greater than the target, the mining program adds a value of 1 to the nonce & generates the hash again.
-    - The entire network of miners tries to solve the hash this way. On Bitcoin blockchain, the miner that solves the hash is given the retard for the work being done.
-- #### Takeaways (Mainly for comparison to PoS)
-    - Validation is done by a network of miners
-    - Bitcoin paid as a reward for transaction fees
-    - Competitive nature uses A LOT of energy and computational power
+## Proof of Work (PoW)
+Proof of Work (PoW) is a decentralized consensus mechanism that requires members, known as miners, to expend computational power to solve complex cryptographic puzzles. The main aspects include:
 
-### Mining
+- **Bitcoin as a Token:** Bitcoin is technically a token on its native Bitcoin blockchain.
+- **Blockchain Technology:** Blockchains are distributed ledgers that record all transactions. Each block contains transaction data such as amounts, wallet addresses, and timestamps.
+- **Block Header:** The block header includes several pieces of information (version, previous block hash, Merkle root, timestamp, difficulty target, nonce) that are hashed to produce a digest meeting the network's difficulty criteria.
+- **Nonce:** A value adjusted by miners to change the block header hash in an attempt to meet the network difficulty target.
+- **Hash Chain:** Ensures the integrity of the blockchain by linking each block's hash with its predecessor.
+- **Mining and Rewards:** Miners adjust the nonce to solve cryptographic puzzles; the first to meet the target hash rate is rewarded with cryptocurrency, such as Bitcoin.
+- **Environmental Impact:** The PoW model is criticized for its significant energy consumption due to the computational power required.
+- **Security Model:** Security relies on the computational difficulty of reversing the chain, which would require immense computational resources.
 
+## Mining
+Also known as "block creators," miners engage in the computational process of creating new blocks and are rewarded for their efforts upon successfully solving cryptographic puzzles.
 
-### Proof of Stake
-- This was popularized by Etherum
+## Proof of Stake (PoS)
+Proof of Stake is an alternative consensus mechanism that reduces computational demand by requiring validators to hold and sometimes lock up a certain amount of tokens as a stake:
 
-### Proof of History
-- Popularized by Solana
+- **Validators:** Are chosen based on the quantity of tokens staked. For example, running a full validator node on Ethereum requires staking at least 32 ETH.
+- **Staking Pools:** Allow those with fewer tokens to participate in staking by pooling resources.
+- **Validation Process:** Validators verify transactions and form a consensus to validate and close blocks, often using mechanisms like sharding.
+- **Security and Consensus:** Includes economic stakes and potential penalties (slashing) for dishonest behavior, enhancing network security.
+- **Minting/Forging:** Creating new blocks is known as minting or forging, where validators are rewarded with transaction fees.
+
+## Proof of History
+Introduced by Solana, Proof of History is a consensus mechanism that uses timestamps to record the sequence of events, facilitating faster validation processes without compromising network security.
 
 # Bitcoin
 
-### What is Bitcoin
-Peer to peer currency via blockchain. 
+## What is Bitcoin?
+Bitcoin is a decentralized digital currency that operates without the need for a central authority. The currency uses a peer-to-peer network to verify transactions which are recorded in a public ledger called a blockchain.
 
-- Think of it as a bunch of decentralized databases, where each database is shares a synchronized instance of the ledger.
-- The ledger is basically just a list of all the transactions that happened across the blockchain
-- The block is essentially a group of transactions. Think a linked list, where each node represents a group of transactions (a block).
-- The chain is the entirety of the linked list essentially.
-- Each new block is linked to the previous block
-- Each user (or wallet) has a public key for receiving money and a private key for spending money
-- Each transaction has a hash / cryptographic representation of the previous transaction and the new owners public key. The hash is then signed with the previous owner's private key
+- **Decentralized Network:** Operates over a global network of computers and does not require a central authority or intermediary.
+- **Security and Transparency:** Every transaction is publicly recorded, ensuring transparency while maintaining user anonymity through cryptographic techniques.
+- **Blockchain Dynamics:** Composed of blocks that contain groups of transactions linked together in a chronological chain.
 
-### What is Blockchain (For Bitcoin)
-Blockchain is just a distributed ledger, where data is chained together via cryptographic technique(s)
-- A block on the blockchain can be thought of as a cell in a spread sheet or a node in a linked list. The chain contains a block header, transaction counter, and the transactions recorded in the block. The block header consists of the following...
-- Software version
-- Previous block hash
-- Merkle root - a single has that contains all the hashed info from previous transactions
-- Timestamp
-- Difficultyy target
-- Nonce
+## What is Blockchain (For Bitcoin)
+Blockchain is the underlying technology of Bitcoin, acting as a decentralized ledger:
 
-
-
+- **Block Components:** Each block acts like a node in a linked list, containing a header and a list of transactions.
+- **Immutable Ledger:** The blockchain's integrity is maintained through cryptographic hashes linking each block to its predecessor, making it tamper-resistant.
+- **Block Header:** Contains critical data including the previous block's hash, aiding in security and continuity.
 
 # Solana
-Is a decentralized smart contracts block chain for decentralizing compute.
 
-### What is Solana
-Solana is
+## What is Solana?
+Solana is a high-performance blockchain supporting decentralized applications and smart contracts. It utilizes a unique hybrid consensus model combining Proof of Stake with Proof of History to enhance speed and efficiency.
+
+- **Smart Contracts and Decentralization:** Focuses on improving scalability and transaction speeds through innovative consensus mechanisms.
+- **Proof of History:** Integrates timestamps into transaction data, streamlining the validation process and allowing for greater throughput.
